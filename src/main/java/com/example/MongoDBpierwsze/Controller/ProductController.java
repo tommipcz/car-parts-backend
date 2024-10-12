@@ -5,6 +5,7 @@ import com.example.MongoDBpierwsze.model.Products;
 import com.example.MongoDBpierwsze.repository.ProductRepository;
 
 
+import com.example.MongoDBpierwsze.repository.SearchReprsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,9 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private SearchReprsitory searchReprsitory;
     
 
     @GetMapping("/products/all")
@@ -45,9 +49,8 @@ public class ProductController {
         productService.deleteCar(id);
     }
 
-//    @GetMapping("/products/")
-//    public List<Products> productsByText(@RequestParam String text){
-//        return productRepository.findByText(text);
-//    }
-
+    @GetMapping("/products/{text}")
+    public List<Products> search(@PathVariable String text) {
+        return searchReprsitory.findByText(text);
+    }
 }
