@@ -24,6 +24,11 @@ public class ProductController {
     private SearchReprsitory searchReprsitory;
     
 
+    @GetMapping("/")
+    public String greet() {
+        return "Test";
+    }
+
     @GetMapping("/products/all")
     public ResponseEntity<List<Products>> allProducts() {
         return new ResponseEntity<List<Products>>(productService.allProducts(), HttpStatus.OK);
