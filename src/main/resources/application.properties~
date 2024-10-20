@@ -1,4 +1,4 @@
- spring.application.name=MongoDBpierwsze
+spring.application.name=MongoDBpierwsze
 
 spring.data.mongodb.database=car-parts
 spring.data.mongodb.uri=mongodb+srv://thomasnkraw:Tomek01@cluster0.ry2mn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
